@@ -15,3 +15,7 @@ Se utiliza el patrón de repositorio
 
   PROD=false
 ```
+4. Levantar las bases de datos con el comando
+```bash
+  docker compose up -d
+```
