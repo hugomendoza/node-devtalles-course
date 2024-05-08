@@ -1,5 +1,5 @@
 import { prisma } from "../../data-db/postgres-db";
-import { CreateTodoDto, TodoDatasource, TodoEntity, UpdateTodoDto } from "../../domain";
+import { CreateTodoDto, CustomError, TodoDatasource, TodoEntity, UpdateTodoDto } from "../../domain";
 
 export class TodoDatasourceImpl implements TodoDatasource {
   
@@ -22,7 +22,7 @@ export class TodoDatasourceImpl implements TodoDatasource {
       where: { id }
     })
 
-    if(!todo) throw `TODO with id ${id} not found`
+    if(!todo) throw new CustomError(`TODO with id ${id} not found`, 404)
 
     return TodoEntity.fromObject(todo)
 
