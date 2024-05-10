@@ -23,7 +23,7 @@ export class UserEntity {
       img,
     } = object
 
-    if(!id && !_id) {
+    if(!_id && !id) {
       throw CustomError.badRequest('Missing id')
     }
 
@@ -48,7 +48,7 @@ export class UserEntity {
     }
 
     return new UserEntity(
-      id || _id,
+      _id || id,
       name,
       email,
       emailValidated,
