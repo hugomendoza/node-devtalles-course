@@ -16,3 +16,5 @@ keys/
 dist/
 
 .vscode
+# Local Netlify folder
+.netlify
